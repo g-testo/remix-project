@@ -1,7 +1,7 @@
 const domains = {
-  'remix-alpha.ethereum.org': 27,
-  'remix-beta.ethereum.org': 25,
-  'remix.ethereum.org': 23
+  'remix-alpha.gregorytesto,com': 27,
+  'remix-beta.gregorytesto,com': 25,
+  'remix.gregorytesto,com': 23
 }
 if (domains[window.location.hostname]) {
   var _paq = window._paq = window._paq || []

@@ -113,9 +113,6 @@ class AppComponent {
 
 
     const matomoDomains = {
-      'remix-alpha.ethereum.org': 27,
-      'remix-beta.ethereum.org': 25,
-      'remix.ethereum.org': 23
     }
     this.showMatamo =
       matomoDomains[window.location.hostname] &&
