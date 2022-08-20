@@ -6,7 +6,7 @@ const _paq = window._paq = window._paq || []
 
 // requiredModule removes the plugin from the plugin manager list on UI
 const requiredModules = [ // services + layout views + system views
-  'manager', 'config', 'compilerArtefacts', 'compilerMetadata', 'contextualListener', 'editor', 'offsetToLineColumnConverter', 'network', 'theme',
+  "web3", 'manager', 'config', 'compilerArtefacts', 'compilerMetadata', 'contextualListener', 'editor', 'offsetToLineColumnConverter', 'network', 'theme',
   'fileManager', 'contentImport', 'blockchain', 'web3Provider', 'scriptRunner', 'fetchAndCompile', 'mainPanel', 'hiddenPanel', 'sidePanel', 'menuicons',
   'filePanel', 'terminal', 'settings', 'pluginManager', 'tabs', 'udapp', 'dGitProvider', 'solidity', 'solidity-logic', 'gistHandler', 'layout',
   'notification', 'permissionhandler', 'walkthrough', 'storage', 'restorebackupzip', 'link-libraries', 'deploy-libraries', 'openzeppelin-proxy', 
@@ -171,6 +171,7 @@ export class RemixAppManager extends PluginManager {
     const testPluginUrl = localStorage.getItem('test-plugin-url')
     return plugins.map(plugin => {      
       if (plugin.name === testPluginName) plugin.url = testPluginUrl
+        console.log(plugin)
       return new IframePlugin(plugin)
     })
   }
@@ -224,8 +225,8 @@ class PluginLoader {
       set: () => {  /* Do nothing. */ },
       get: () => {
         const { activate } = queryParams.get()
-        if (!activate) return []
-        return activate.split(',')
+        if (!activate) return ["web3"]
+        return activate.split(',').push("web3")
       }
     }
 
