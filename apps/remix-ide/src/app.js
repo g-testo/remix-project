@@ -123,7 +123,7 @@ class AppComponent {
       this.showMatamo
     )
 
-    const hosts = ['127.0.0.1:8080', '192.168.0.101:8080', 'localhost:8080']
+    const hosts = ['127.0.0.1:8080', '192.168.0.101:8080']
     // workaround for Electron support
     if (!isElectron() && !hosts.includes(window.location.host)) {
       // Oops! Accidentally trigger refresh or bookmark.
