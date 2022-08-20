@@ -58,7 +58,7 @@ class DGitProvider extends Plugin {
 
   async parseInput (input) {
     return {
-      corsProxy: 'https://corsproxy.remixproject.org/',
+      corsProxy: 'https://corsproxy.gregorytesto.com/',
       http,
       onAuth: url => {
         url
