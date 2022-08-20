@@ -372,6 +372,16 @@ class AppComponent {
     await this.appManager.activatePlugin(['settings'])
     await this.appManager.activatePlugin(['walkthrough','storage', 'search','compileAndRun', 'recorder'])
     await this.appManager.activatePlugin(['web3'])
+    
+    const { codetrackId } = queryParams.get();
+
+    if(!localStorage.getItem("codetrackId") && !localStorage.getItem("codetrackUsername")){
+        if(codetrackId){
+            localStorage.setItem("codetrackId", codetrackId);
+        } else {
+            this.appManager.call('notification', 'toast', `No CodeTrack identifier found, please enter it in settings`);
+        }
+    }
 
     this.appManager.on(
       'filePanel',

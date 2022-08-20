@@ -140,13 +140,11 @@ export class RemixAppManager extends PluginManager {
         "description": "Learn Ethereum with Remix!",
         "documentation": "https://remix-learneth-plugin.readthedocs.io/en/latest/index.html",
         "version": "0.1.0-beta.8",
-        "methods": [
-          
-        ],
+        "methods": ["startTutorial"],
         "kind": "none",
         "icon": "https://raw.githubusercontent.com/bunsenstraat/remix-learneth-plugin/master/src/assets/Font_Awesome_5_solid_book-reader.svg",
         "location": "sidePanel",
-        "url": "https://web3-plugin.herokuapp.com",
+        "url": "https://statuesque-pika-8627e5.netlify.app/",
         "repo": "",
         "maintainedBy": "Remix",
         "authorContact": "",
@@ -157,7 +155,7 @@ export class RemixAppManager extends PluginManager {
       })
       localStorage.setItem('plugins-directory', JSON.stringify(plugins))
     } catch (e) {
-      console.log('getting plugins list from localstorage...')
+    //   console.log('getting plugins list from localstorage...')
       const savedPlugins = localStorage.getItem('plugins-directory')
       if (savedPlugins) {
         try {
@@ -171,7 +169,7 @@ export class RemixAppManager extends PluginManager {
     const testPluginUrl = localStorage.getItem('test-plugin-url')
     return plugins.map(plugin => {      
       if (plugin.name === testPluginName) plugin.url = testPluginUrl
-        console.log(plugin)
+        // console.log(plugin)
       return new IframePlugin(plugin)
     })
   }

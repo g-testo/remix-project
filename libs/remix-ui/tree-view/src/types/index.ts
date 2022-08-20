@@ -23,5 +23,5 @@ export interface TreeViewItemProps {
     onContextMenu?: (...args: any) => void,
     onBlur?: (...args: any) => void,
     showIcon?: boolean
-    expandedPaths?: string[];
+    expandedpaths?: string[];
 }
