@@ -135,6 +135,27 @@ export class RemixAppManager extends PluginManager {
         }
         return true
       })
+      plugins.push({
+        "name": "web3",
+        "displayName": "Web 3",
+        "description": "Learn Ethereum with Remix!",
+        "documentation": "https://remix-learneth-plugin.readthedocs.io/en/latest/index.html",
+        "version": "0.1.0-beta.8",
+        "methods": [
+          
+        ],
+        "kind": "none",
+        "icon": "https://raw.githubusercontent.com/bunsenstraat/remix-learneth-plugin/master/src/assets/Font_Awesome_5_solid_book-reader.svg",
+        "location": "sidePanel",
+        "url": "https://web3-plugin.herokuapp.com",
+        "repo": "",
+        "maintainedBy": "Remix",
+        "authorContact": "",
+        "targets": [
+          "remix",
+          "vscode"
+        ]
+      })
       localStorage.setItem('plugins-directory', JSON.stringify(plugins))
     } catch (e) {
       console.log('getting plugins list from localstorage...')
