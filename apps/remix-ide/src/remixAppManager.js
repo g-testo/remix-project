@@ -11,7 +11,7 @@ const requiredModules = [ // services + layout views + system views
   'filePanel', 'terminal', 'settings', 'pluginManager', 'tabs', 'udapp', 'dGitProvider', 'solidity', 'solidity-logic', 'gistHandler', 'layout',
   'notification', 'permissionhandler', 'walkthrough', 'storage', 'restorebackupzip', 'link-libraries', 'deploy-libraries', 'openzeppelin-proxy', 
   'hardhat-provider', 'ganache-provider', 'foundry-provider', 'basic-http-provider', 'injected-optimism-provider', 'injected-arbitrum-one-provider',
-  'compileAndRun', 'search', 'recorder', 'fileDecorator']
+  'compileAndRun', 'search', 'recorder', 'fileDecorator', "web3"]
 
 // dependentModules shouldn't be manually activated (e.g hardhat is activated by remixd)
 const dependentModules = ['hardhat', 'truffle', 'slither'] 
@@ -24,7 +24,7 @@ const sensitiveCalls = {
 
 export function isNative(name) {
   // nativePlugin allows to bypass the permission request
-  const nativePlugins = ["web3", 'vyper', 'workshops', 'debugger', 'remixd', 'menuicons', 'solidity', 'solidity-logic', 'solidityStaticAnalysis', 'solidityUnitTesting', 
+  const nativePlugins = ['vyper', 'workshops', 'debugger', 'remixd', 'menuicons', 'solidity', 'solidity-logic', 'solidityStaticAnalysis', 'solidityUnitTesting', 
     'layout', 'notification', 'hardhat-provider', 'ganache-provider', 'foundry-provider', 'basic-http-provider', 'injected-optimism-provider', 'injected-arbitrum-one-provider']
   return nativePlugins.includes(name) || requiredModules.includes(name)
 }
@@ -211,6 +211,7 @@ class PluginLoader {
 
   constructor() {
     const queryParams = new QueryParams()
+    
     this.donotAutoReload = ['remixd', 'git'] // that would be a bad practice to force loading some plugins at page load.
     this.loaders = {}
     this.loaders.localStorage = {
@@ -225,8 +226,8 @@ class PluginLoader {
       set: () => {  /* Do nothing. */ },
       get: () => {
         const { activate } = queryParams.get()
-        if (!activate) return ["web3"]
-        return activate.split(',').push("web3")
+        if (!activate) return []
+        return activate.split(',')
       }
     }
 
