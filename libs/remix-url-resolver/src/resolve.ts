@@ -178,7 +178,6 @@ export class RemixURLResolver {
     if (imported) {
       return imported
     }
-    console.log("******++", filePath);
     const builtinHandlers: Handler[] = this.getHandlers()
     const handlers: Handler[] = customHandlers ? [...builtinHandlers, ...customHandlers] : [...builtinHandlers]
     const matchedHandler = handlers.filter(handler => handler.match(filePath))
