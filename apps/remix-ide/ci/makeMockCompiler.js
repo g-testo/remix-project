@@ -7,7 +7,7 @@ var defaultVersion = 'soljson-v0.8.7+commit.e28d00a7.js'
 const path = require('path')
 
 compiler.loadRemoteVersion(defaultVersion, (error, solcSnapshot) => {
-  console.log('solcSnapshot: ', solcSnapshot)
+//   console.log('solcSnapshot: ', solcSnapshot)
   if (error) console.log(error)
   var compilationResult = {}
   const testsFolder = path.resolve(__dirname + '/../test-browser/tests/') + '/' // eslint-disable-line

@@ -8,6 +8,8 @@ export function GithubSettings (props: GithubSettingsProps) {
   const [githubToken, setGithubToken] = useState<string>("")
   const [githubUserName, setGithubUsername] = useState<string>("")
   const [githubEmail, setGithubEmail] = useState<string>("")
+  const [codeTrackUserName, setCodeTrackUserName] = useState<string>("")
+
 
   useEffect(() => {
     if (props.config) {
@@ -20,6 +22,10 @@ export function GithubSettings (props: GithubSettingsProps) {
       setGithubEmail(githubEmail)
     }
   }, [props.config])
+
+  useEffect(() => {
+    setCodeTrackUserName(localStorage.getItem("codetrackUsername"));
+  },[]);
 
   const handleChangeTokenState = (event) => {
     setGithubToken(event.target.value)
@@ -44,10 +50,36 @@ export function GithubSettings (props: GithubSettingsProps) {
     setGithubEmail('')
     props.removeToken()
   }
+
+  const handleChangeCodeTrackInput=(e)=>{
+    setCodeTrackUserName(e.target.value);
+  }
+
+  const handleCodeTrackSubmit=()=>{
+    if(codeTrackUserName) {
+        localStorage.setItem("codetrackUsername", String(codeTrackUserName));
+    } else {
+        localStorage.removeItem("codetrackUsername");
+    }
+  }
   
   return (
     <div className="border-top">
       <div className="card-body pt-3 pb-2">
+        <h6 className="card-title">CodeTrack Credentials</h6>
+        <p className="mb-1">Manage your CodeTrack credentials used to keep track of your educational progress.</p>
+        <p className="">Go to your profile page on <a target="_blank" href="https://www.codetrack.dev/">CodeTrack</a> to get you username and enter it below.</p>
+
+        <div>
+          <label className="mb-0 pb-0">Username:</label>
+          <div className="input-group text-secondary mb-0 h6">
+            <input id="codeTrackUsername" data-id="codeTrackUsername" type="text" className="form-control" onChange={handleChangeCodeTrackInput} value={ codeTrackUserName } />
+            <div className="input-group-append">
+                <button onClick={handleCodeTrackSubmit}>Save</button>
+            </div>
+          </div>
+        </div>
+        <br />
         <h6 className="card-title">{gitAccessTokenTitle}</h6>
         <p className="mb-1">{gitAccessTokenText}</p>
         <p className="">{gitAccessTokenText2}</p>

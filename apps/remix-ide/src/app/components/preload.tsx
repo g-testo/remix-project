@@ -58,7 +58,7 @@ export const Preload = () => {
     const setFileSystems = async() => {
         const fsLoaded = await remixFileSystems.current.setFileSystem([(testmigrationFallback.current || testBlockStorage.current)? null: remixIndexedDB.current, testBlockStorage.current? null:localStorageFileSystem.current])
         if (fsLoaded) {
-            console.log(fsLoaded.name + ' activated')
+            // console.log(fsLoaded.name + ' activated')
             _paq.push(['trackEvent', 'Storage', 'activate', fsLoaded.name])
             loadAppComponent()
         } else {

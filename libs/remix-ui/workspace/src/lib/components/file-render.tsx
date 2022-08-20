@@ -97,6 +97,7 @@ export const FileRender = (props: RenderFileProps) => {
         expand={props.expandPath.includes(file.path)}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
+        expandedpaths={props.expandPath}
       >
         {
           file.child ? <TreeView id={`treeView${file.path}`} key={`treeView${file.path}`} {...spreadProps}>{
@@ -141,6 +142,7 @@ export const FileRender = (props: RenderFileProps) => {
         labelClass={labelClass}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
+        expandedpaths={props.expandPath}
       />
     )
   }

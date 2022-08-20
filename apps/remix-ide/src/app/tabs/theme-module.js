@@ -29,7 +29,6 @@ const profile = {
 
 export class ThemeModule extends Plugin {
   constructor () {
-    console.log("++++", window.location);
     super(profile)
     this.events = new EventEmitter()
     this._deps = {
@@ -37,7 +36,6 @@ export class ThemeModule extends Plugin {
     }
     this.themes = {}
     themes.map((theme) => {
-        console.log(999999, {url: window.location.origin + ( window.location.pathname.startsWith('/address/') || window.location.pathname.endsWith('.sol') ? '/' : window.location.pathname ) + theme.url});
       this.themes[theme.name.toLocaleLowerCase()] = {
        ...theme,
         url: window.location.origin + ( window.location.pathname.startsWith('/address/') || window.location.pathname.endsWith('.sol') ? '/' : window.location.pathname ) + theme.url
