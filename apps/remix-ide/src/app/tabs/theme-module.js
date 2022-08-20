@@ -29,6 +29,7 @@ const profile = {
 
 export class ThemeModule extends Plugin {
   constructor () {
+    console.log("++++", window.location);
     super(profile)
     this.events = new EventEmitter()
     this._deps = {
