@@ -541,7 +541,8 @@ declare interface IRemixApi {
 declare interface ISettings {
     events: {} & StatusEvents
     methods: {
-        getGithubAccessToken(): string
+        getGithubAccessToken(): string,
+        getCodeTrackUserId(): string
     }
 }
 
