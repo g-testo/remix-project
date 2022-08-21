@@ -72,8 +72,8 @@ export function GithubSettings (props: GithubSettingsProps) {
           <label className="mb-0 pb-0">Username:</label>
           <div className="input-group text-secondary mb-0 h6">
             <input id="codeTrackUsername" data-id="codeTrackUsername" type="text" className="form-control" onChange={handleChangeCodeTrackInput} value={ codeTrackUserName } />
-            <div className="input-group-append">
-                <button onClick={handleCodeTrackSubmit}>Save</button>
+            <div className="d-flex justify-content-end">
+                <input className="btn btn-sm btn-primary ml-2" id="saveCodeTrackUserName" data-id="settingsTabSaveCodeTrackUserName" onClick={handleCodeTrackSubmit} value="Save" type="button" disabled={codeTrackUserName === ''}></input>
             </div>
           </div>
         </div>
