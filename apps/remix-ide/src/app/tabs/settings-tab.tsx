@@ -8,7 +8,7 @@ import { PluginViewWrapper } from '@remix-ui/helper'
 const profile = {
   name: 'settings',
   displayName: 'Settings',
-  methods: ['get'],
+  methods: ['get', 'getGithubAccessToken', 'getCodeTrackUserId'],
   events: [],
   icon: 'assets/img/settings.webp',
   description: 'Remix-IDE settings',
@@ -68,6 +68,10 @@ module.exports = class SettingsTab extends ViewPlugin {
 
   get (key) {
     return this.config.get(key)
+  }
+
+  getCodeTrackUserId () {
+    return localStorage.getItem("codeTrackId");
   }
 
   updateMatomoAnalyticsChoice (isChecked) {

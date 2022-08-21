@@ -140,7 +140,7 @@ export class RemixAppManager extends PluginManager {
         "description": "Learn Ethereum with Remix!",
         "documentation": "https://remix-learneth-plugin.readthedocs.io/en/latest/index.html",
         "version": "0.1.0-beta.8",
-        "methods": ["startTutorial"],
+        "methods": [],
         "kind": "none",
         "icon": "https://raw.githubusercontent.com/bunsenstraat/remix-learneth-plugin/master/src/assets/Font_Awesome_5_solid_book-reader.svg",
         "location": "sidePanel",
