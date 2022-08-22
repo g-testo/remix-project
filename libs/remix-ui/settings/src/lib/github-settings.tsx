@@ -66,7 +66,7 @@ export function GithubSettings (props: GithubSettingsProps) {
       <div className="card-body pt-3 pb-2">
         <h6 className="card-title">CodeTrack Credentials</h6>
         <p className="mb-1">Manage your CodeTrack credentials used to keep track of your educational progress.</p>
-        <p className="">Go to your profile page on <a target="_blank" href="https://www.codetrack.dev/">CodeTrack</a> to get you username and enter it below.</p>
+        <p className="">Go to your profile page on <a target="_blank" href="https://www.codetrack.dev/">CodeTrack</a> to get your username and enter it below.</p>
 
         <div>
           <label className="mb-0 pb-0">Username:</label>

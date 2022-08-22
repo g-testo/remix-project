@@ -66,7 +66,6 @@ const RemixApp = (props: IRemixAppUi) => {
 
   const value = {
     settings: props.app.settings,
-    showMatamo: props.app.showMatamo,
     appManager: props.app.appManager,
     modal: props.app.notification,
     layout: props.app.layout
