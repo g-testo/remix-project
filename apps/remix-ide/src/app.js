@@ -381,7 +381,7 @@ class AppComponent {
     if(codeTrackId){
         localStorage.setItem("codeTrackId", codeTrackId);
     } else if(!idFromStorage){
-        this.appManager.call('notification', 'toast', `No CodeTrack identifier found, please enter it in settings`);
+        // this.appManager.call('notification', 'toast', `No CodeTrack identifier found, please enter it in settings`);
     }
 
     this.appManager.on(
